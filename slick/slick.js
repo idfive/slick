@@ -1298,16 +1298,15 @@
         });
 
         if (_.$dots !== null) {
-            _.$dots.attr('role', 'tablist').find('li').each(function(i) {
+            _.$dots.find('li').each(function(i) {
+            
                 $(this).attr({
                     'role': 'presentation',
-                    'aria-selected': 'false',
-                    'aria-controls': 'navigation' + _.instanceUid + i + '',
+                    // 'aria-controls': 'navigation' + _.instanceUid + i + '',
                     'id': 'slick-slide' + _.instanceUid + i + ''
                 });
             })
-                .first().attr('aria-selected', 'true').end()
-                .find('button').attr('role', 'button').end()
+                .first().find('button').attr('role', 'button').end()
                 .closest('div').attr('role', 'toolbar');
         }
         _.activateADA();
